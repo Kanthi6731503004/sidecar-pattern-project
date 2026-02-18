@@ -1,4 +1,4 @@
-# Decision 2: Implementing a Service Mesh Proxy Sidecar for Network Abstraction
+# Decision 2: Implementing a Service Mesh Proxy Sidecar for Network Abstraction (MFU Digital Campus Scenario)
 
 ## Context
 
@@ -6,7 +6,7 @@ In a distributed microservices architecture, core business logic typically repre
 
 Historically, tightly coupling infrastructure code (like cryptographic libraries) with business logic drastically compromises independent deployability. An urgent security patch discovered in an embedded cryptographic library necessitates the recompilation, comprehensive testing, and simultaneous redeployment of the entire application suite. Alternatively, routing all traffic through a single, monolithic API gateway introduces severe network latency penalties and creates single points of failure.
 
-Specifically, within our current distributed ecosystem, we are observing a critical friction point: **the unreliability and insecurity of inter-service network communication**. Individual product teams are failing to consistently implement mutual TLS (mTLS), retry logic, and circuit breaking, leading to cascading failures during transient network partitions and violations of internal zero-trust compliance mandates.
+Specifically, within our current distributed ecosystem, we are observing a critical friction point: **the unreliability and insecurity of inter-service network communication**. In the MFU Digital Campus scenario, services such as the student portal, digital library, attendance tracking, and finance billing systems are implemented by different teams and frequently fail to consistently implement mutual TLS (mTLS), retry logic, and circuit breaking. This leads to cascading failures during transient network partitions and violations of internal zero-trust compliance mandates.
 
 ---
 
